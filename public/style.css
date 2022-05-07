@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #1A242F;
+}
+body {
+    overflow: hidden;
+}
+
+video {
+    padding: 10px;
+    height: 200px;
+    width: 300px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+
+.messages_component {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.controls {
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+}
+
+.controls i {
+    color: white;
+    font-size: 18px;
+    
+}
