@@ -17,6 +17,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <!--    Socket.io javascript link    !important otherwise will throw io not defined eror-->
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://unpkg.com/peerjs@1.3.2/dist/peerjs.min.js"></script>
     <link
@@ -35,14 +36,30 @@
       <div class="video_component col-md-9">
         <div id="videoItem"></div>
         <div class="controls d-flex">
-          <i class="fa-solid fa-microphone-slash"></i>
-          <i class="fa-solid fa-microphone"></i>
-          <i class="fa-solid fa-video"></i>
-          <i class="fa-solid fa-video-slash"></i>
+          <div class="control_audio_item">
+            <i
+              onclick="muteORunmute()"
+              class="fa-solid fa-microphone audio"
+            ></i>
+          </div>
+          <div class="control_video_item">
+            <i onclick="stopORshow()" class="fa-solid fa-video video"></i>
+          </div>
         </div>
       </div>
       <div class="messages_component col-md-3">
         <h5>Messages</h5>
+
+        <div class="chat_box" id="chat_element"></div>
+        <div class="chat_placeholder">
+          <input
+            type="text"
+            placeholder="Enter message..."
+            name="message"
+            id="msg"
+          />
+          <button onclick="setMessage()" type="submit">Push</button>
+        </div>
       </div>
     </div>
 

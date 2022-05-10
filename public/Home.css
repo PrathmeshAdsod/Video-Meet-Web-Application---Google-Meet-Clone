@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Fira+Sans&family=Hubballi&family=Inconsolata&family=Lora:ital@1&family=Montserrat:ital,wght@1,900&family=Open+Sans:ital,wght@1,300;1,400&family=Rock+Salt&family=Sansita+Swashed:wght@300&display=swap');
+
+.header h1{
+    text-align: center;
+    font-weight: 600;
+    color: #43433d;
+    margin : 10px 0;
+}
+
+.main_content h1:first-child{
+    margin-top: 20px;
+}
+.main_content h1 {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+}
+
+.main_content p {
+    font-weight: 700;
+}
+
+.main_buttons {
+    margin-top: 80px;
+    display: flex;
+}
+.new_meet {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.main_buttons button:focus {
+    box-shadow: none;
+}
+
+.link_to_meet {
+    width: 250px;
+    border: 1px solid rgb(229, 229, 240);
+    margin-left: 30px;
+    border-radius: 2px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.link_to_meet::placeholder {
+    padding-left: 20px;
+}
+.link_to_meet:focus {
+    border: 2px solid #1A73E8;
+    outline: none;
+}
+
+.learn_more {
+    margin: 30px 0 10px 0;
+}
+
+.main_content hr {
+    margin-top: 50px;
+}

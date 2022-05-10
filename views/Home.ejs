@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/Home.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const ID = "<%= ID %>";
+    </script>
+    <title>Meet</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Meet-to-Meet</h1>
+    </div>
+
+    <div class="row container-fluid">
+      <div class="main_content col-md-6">
+        <h1>Free Video Meetings.</h1>
+        <h1>Now with Premium quality.</h1>
+        <br />
+        <p>
+          We build it free for all with motive to communicate <br />
+          people from long distance together.
+        </p>
+        <div class="main_buttons">
+          <button
+            type="submit"
+            id="createMeet"
+            class="new_meet btn btn-primary"
+          >
+            New meeting
+          </button>
+          <input
+            type="text"
+            name="link_to_meet"
+            class="link_to_meet"
+            placeholder="Enter code or link"
+          />
+        </div>
+        <hr />
+        <div class="learn_more">
+          <span><a href="#">Learn more </a>about meet-to-meet</span>
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+
+    <script src="../public/Home.js"></script>
+  </body>
+</html>

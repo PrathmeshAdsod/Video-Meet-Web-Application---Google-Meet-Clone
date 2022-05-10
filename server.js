@@ -11,7 +11,7 @@ const {nanoid} = require('nanoid');
 */   
 const server = require('http').Server(app);
 const io = require('socket.io')(server)
-ID  = nanoid();
+let ID  = nanoid();
 
 const {ExpressPeerServer} = require('peer');
 // Now peerServer will be able to work with express
@@ -27,19 +27,31 @@ app.set('view engine' , 'ejs')
 app.use('/public' , express.static('./public/'))
 
 app.get('/' , (req,res) => {
+   //__dirname + '/views/Home.ejs'
+   //console.log('ID is ',ID);
+   res.render('Home' , {ID : ID})
+})
+
+app.get('/stream' , (req,res) => {
    res.redirect(`/${ID}`)
 })
 
 app.get('/:room' , (req,res) => {
-  // res.sendFile(path.join(__dirname + '/weblook/room.ejs'))
-  res.render('room', { ID: req.params.room })
+    res.render('room', { ID: req.params.room })
 })
 
 io.on('connection' , (socket) => {
+   socket.on('userJoined' , (ID) => {
+      socket.join(ID)
+   })
    socket.on('roomJoined' , (ID , peerId) => {
       socket.join(ID);
       // emitting when user joined
       socket.to(ID).emit('userConnected' , peerId);
+      socket.on('message' , (msg) => {
+         io.to(ID).emit('createMessage' , msg)
+      })
+
    })
 })
 
