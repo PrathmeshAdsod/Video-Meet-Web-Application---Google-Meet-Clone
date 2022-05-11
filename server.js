@@ -11,7 +11,7 @@ const {nanoid} = require('nanoid');
 */   
 const server = require('http').Server(app);
 const io = require('socket.io')(server)
-let ID  = nanoid();
+ID  = nanoid();
 
 const {ExpressPeerServer} = require('peer');
 // Now peerServer will be able to work with express
@@ -32,7 +32,7 @@ app.get('/' , (req,res) => {
    res.render('Home' , {ID : ID})
 })
 
-app.get('/stream' , (req,res) => {
+app.get('/home/' , (req,res) => {
    res.redirect(`/${ID}`)
 })
 

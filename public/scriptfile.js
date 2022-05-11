@@ -7,7 +7,7 @@
    Before that i used socket io as const io = require('socket.io')() only
 */
 const socket = io()
-
+console.log('ID on Scriptfile is ',ID);
 const myVideo = document.createElement('video')
 myVideo.muted = true
 
